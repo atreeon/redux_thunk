@@ -5,12 +5,12 @@ import 'package:redux_thunk/redux_thunk.dart';
 
 void main() {
   // First, create a quick reducer
-  String reducer(String state, dynamic action) =>
-      action is String ? action : state;
+  String reducer(String state, dynamic action) => action is String ? action : state;
 
   // Next, apply the `thunkMiddleware` to the Store
   final store = Store<String>(
     reducer,
+    initialState: '',
     middleware: [thunkMiddleware],
   );
 
